@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">Taskify</div>
+        <div class="profile">
+            <p>
+                <span><img src="assets/icons/memoji.png" width="45px"></span>
+                Manasoa Harimihoby
+            </p>
+        </div>
+        
+        <hr class="custom-divider">
+        <h2 class="menu-toggle">Menu
+            <span class="material-icons"><img src="assets/icons/expand-button.png" width="15px"></span>
+        </h2>
+        <ul class="sidebar-list">
+            <li><a href="index.html"><span class="material-icons"><img src="assets/icons/calendar.png" width="25px"></span>Calendrier</a></li>
+            <li><a href="tache.html"><span class="material-icons"><img src="assets/icons/clipboard.png" width="25px"></span>Tâches</a></li>
+            <li><a href="expense.html"><span class="material-icons"><img src="assets/icons/calculator.png" width="25px"></span>Dépenses</a></li>
+            <li><a href="notes.html"><span class="material-icons"><img src="assets/icons/notes.png" width="25px"></span>Notes</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+       <div class="nav">
+        <div class="search-bar">
+            <img src="assets/icons/search-interface-symbol.png" width="20px">
+            <input type="text" placeholder="Start searching here...">
+            <img src="assets/icons/filter.png" width="20px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/bell.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/sunny.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/settings.png" width="25px">
+        </div>
+       </div>
+
+       <div class="container mt-5">
+        <h1 class="text-center mb-4"> Notes</h1>
+        <div class="row " style="justify-content: center;">
+            <div class="col-md-5 form-section" >
+                <form id="note-form">
+                    <div class="form-group">
+                        <label for="note-title">Title</label>
+                        <input type="text" class="form-control" id="note-title" placeholder="Enter note title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="note-content">Content</label>
+                        <textarea class="form-control" id="note-content" rows="4" placeholder="Enter note content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Note</button>
+                </form>
+            </div>
+            <div class="col-md-5 weekly-expense-section">
+                <h2 class="mt-4">Notes</h2>
+                <div id="notes-list">
+                    <!-- Notes will appear here -->
+                </div>
+            </div>
+        </div>
+       </div>
+
+      
+    </div>
+        
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

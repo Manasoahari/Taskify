@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">Taskify</div>
+        <div class="profile">
+            <p>
+                <span><img src="assets/icons/memoji.png" width="45px"></span>
+                Manasoa Harimihoby
+            </p>
+        </div>
+        
+        <hr class="custom-divider">
+        <h2 class="menu-toggle">Menu
+            <span class="material-icons"><img src="assets/icons/expand-button.png" width="15px"></span>
+        </h2>
+        <ul class="sidebar-list">
+            <li><a href="index.html"><span class="material-icons"><img src="assets/icons/calendar.png" width="25px"></span>Calendrier</a></li>
+            <li><a href="tache.html"><span class="material-icons"><img src="assets/icons/clipboard.png" width="25px"></span>Tâches</a></li>
+            <li><a href="expense.html"><span class="material-icons"><img src="assets/icons/calculator.png" width="25px"></span>Dépenses</a></li>
+            <li><a href="notes.html"><span class="material-icons"><img src="assets/icons/notes.png" width="25px"></span>Notes</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+       <div class="nav">
+        <div class="search-bar">
+            <img src="assets/icons/search-interface-symbol.png" width="20px">
+            <input type="text" placeholder="Start searching here...">
+            <img src="assets/icons/filter.png" width="20px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/bell.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/sunny.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/settings.png" width="25px">
+        </div>
+       </div>
+
+       <div class="container mt-5">
+        <h1 class="text-center mb-4">Expense Tracker</h1>
+        <div class="row " style="justify-content: center;">
+            <div class="col-md-5 form-section" >
+                <form id="transaction-form">
+                    <div class="form-group">
+                        <label for="transaction-type">Transaction Type</label>
+                        <select class="form-control" id="transaction-type" required>
+                            <option value="expense">Expense</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-name">Transaction Name</label>
+                        <input type="text" class="form-control" id="transaction-name" placeholder="Enter transaction name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transaction-amount">Amount</label>
+                        <input type="number" class="form-control" id="transaction-amount" placeholder="Enter amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Transaction</button>
+                    <button type="button" id="reset-btn" class="btn btn-danger">Reset Tracker</button>
+                </form>
+
+                
+            </div>
+
+            <!-- Weekly Expenses Section -->
+            <div class="col-md-5 weekly-expense-section">
+                <h2 class="mt-4">Transactions</h2>
+                <ul id="transaction-list" class="list-group">
+                    <!-- List of transactions will be added here -->
+                </ul>
+                <h3 class="mt-4">Total Income: $<span id="total-income">0</span></h3>
+                <h3>Total Expense: $<span id="total-expense">0</span></h3>
+                <h3>Net Total: $<span id="net-total">0</span></h3>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

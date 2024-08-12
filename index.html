@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">Taskify</div>
+        <div class="profile">
+            <p>
+                <span><img src="assets/icons/memoji.png" width="45px"></span>
+                Manasoa Harimihoby
+            </p>
+        </div>
+        
+        <hr class="custom-divider">
+        <h2 class="menu-toggle">Menu
+            <span class="material-icons"><img src="assets/icons/expand-button.png" width="15px"></span>
+        </h2>
+        <ul class="sidebar-list">
+            <li><a href="index.html"><span class="material-icons"><img src="assets/icons/calendar.png" width="25px"></span>Calendrier</a></li>
+            <li><a href="tache.html"><span class="material-icons"><img src="assets/icons/clipboard.png" width="25px"></span>Tâches</a></li>
+            <li><a href="expense.html"><span class="material-icons"><img src="assets/icons/calculator.png" width="25px"></span>Dépenses</a></li>
+            <li><a href="notes.html"><span class="material-icons"><img src="assets/icons/notes.png" width="25px"></span>Notes</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+       <div class="nav">
+        <div class="search-bar">
+            <img src="assets/icons/search-interface-symbol.png" width="20px">
+            <input type="text" placeholder="Start searching here...">
+            <img src="assets/icons/filter.png" width="20px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/bell.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/sunny.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/settings.png" width="25px">
+        </div>
+       </div>
+
+        <div class="calendar-container">
+            <div class="header">
+                <div class="iconeText">
+                    <div class="icones">
+                        <img src="assets/icons/calendar.png" width="25px">
+                    </div>
+                    <p>Calendrier</p>
+                </div>
+                <div class="custom-select-wrapper">
+                    <select class="custom-select" id="monthSelector">
+                        <option value="0">Janvier</option>
+                        <option value="1">Février</option>
+                        <option value="2">Mars</option>
+                        <option value="3">Avril</option>
+                        <option value="4">Mai</option>
+                        <option value="5">Juin</option>
+                        <option value="6">Juillet</option>
+                        <option value="7">Août</option>
+                        <option value="8">Septembre</option>
+                        <option value="9">Octobre</option>
+                        <option value="10">Novembre</option>
+                        <option value="11">Décembre</option>
+                    </select>
+                </div>
+                <span id="monthYear"></span>
+            </div>
+            <div class="calendar" id="calendar"></div>
+        </div> 
+        
+
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

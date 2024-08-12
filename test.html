@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note Taker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .note-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 0;
+        }
+        .note-content {
+            flex: 1;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Simple Note Taker</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- Note Form -->
+                <form id="note-form">
+                    <div class="form-group">
+                        <label for="note-title">Title</label>
+                        <input type="text" class="form-control" id="note-title" placeholder="Enter note title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="note-content">Content</label>
+                        <textarea class="form-control" id="note-content" rows="4" placeholder="Enter note content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Note</button>
+                </form>
+
+                <!-- Notes List -->
+                <h2 class="mt-4">Notes</h2>
+                <div id="notes-list">
+                    <!-- Notes will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const noteForm = document.getElementById('note-form');
+            const noteTitleInput = document.getElementById('note-title');
+            const noteContentInput = document.getElementById('note-content');
+            const notesList = document.getElementById('notes-list');
+
+            noteForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const title = noteTitleInput.value;
+                const content = noteContentInput.value;
+
+                if (title && content) {
+                    addNoteToList(title, content);
+                    noteTitleInput.value = '';
+                    noteContentInput.value = '';
+                }
+            });
+
+            function addNoteToList(title, content) {
+                const noteItem = document.createElement('div');
+                noteItem.className = 'note-item';
+                noteItem.innerHTML = `
+                    <div class="note-content">
+                        <strong>${title}</strong>
+                        <p>${content}</p>
+                    </div>
+                    <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                `;
+                notesList.appendChild(noteItem);
+
+                const deleteBtn = noteItem.querySelector('.delete-btn');
+                deleteBtn.addEventListener('click', () => {
+                    notesList.removeChild(noteItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

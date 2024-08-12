@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">Taskify</div>
+        <div class="profile">
+            <p>
+                <span><img src="assets/icons/memoji.png" width="45px"></span>
+                Manasoa Harimihoby
+            </p>
+        </div>
+        
+        <hr class="custom-divider">
+        <h2 class="menu-toggle">Menu
+            <span class="material-icons"><img src="assets/icons/expand-button.png" width="15px"></span>
+        </h2>
+        <ul class="sidebar-list">
+            <li><a href="index.html"><span class="material-icons"><img src="assets/icons/calendar.png" width="25px"></span>Calendrier</a></li>
+            <li><a href="tache.html"><span class="material-icons"><img src="assets/icons/clipboard.png" width="25px"></span>Tâches</a></li>
+            <li><a href="expense.html"><span class="material-icons"><img src="assets/icons/calculator.png" width="25px"></span>Dépenses</a></li>
+            <li><a href="#"><span class="material-icons"><img src="assets/icons/notes.png" width="25px"></span>Notes</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+       <div class="nav">
+        <div class="search-bar">
+            <img src="assets/icons/search-interface-symbol.png" width="20px">
+            <input type="text" placeholder="Start searching here...">
+            <img src="assets/icons/filter.png" width="20px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/bell.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/sunny.png" width="25px">
+        </div>
+        <div class="icones">
+            <img src="assets/icons/settings.png" width="25px">
+        </div>
+       </div>
+
+        
+       <div class="container" style="margin-top: 40px; margin-bottom: 15px;">
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1>Tasks</h1>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button type="button" id="create-task-btn" class="btn btn-primary" style="border-radius: 20px;">
+                        <span><img src="assets/icons/add.png" width="25px"></span>
+                        Create a task
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr class="custom-divider">
+        <div class="container" style="margin-top: 40px;">
+            <div class="row">
+                <!-- <div class="col-12 d-flex"> -->
+                    <div class="col-3 overview">
+                        <h2>Overview</h2>
+                        <div class="list-header work">Work</div>
+                        <ul id="work-list" class="list-group m-0">
+                            <li class="list-item empty"></li>
+                        </ul>
+                        <div class="list-header personal">Personal</div>
+                        <ul id="personal-list" class="list-group m-0">
+                            <li class="list-item empty"></li>
+                        </ul>
+                    </div>
+        
+                    <div class="col-8 content" style="border: 1px solid #ccc; border-radius: 10px; ">
+                        <!-- Formulaire flottant -->
+                        <div id="overlay" class="overlay"></div>
+                        <div id="task-form" class="task-form" style="display: none;">
+                            <h2>New Task</h2>
+                            <label for="task-type">Task Type:</label>
+                            <select id="task-type">
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                            </select>
+                            <br>
+                            <label for="task-title">Title:</label>
+                            <input type="text" id="task-title" placeholder="Enter task title">
+                            <br>
+                            <label for="task-description">Description:</label>
+                            <textarea id="task-description" placeholder="Enter task description"></textarea>
+                            <br>
+                            <label for="task-steps">Steps:</label>
+                            <div id="steps-container">
+                                <input type="text" class="step-input" placeholder="Enter a step">
+                            </div>
+                            <button id="add-step-btn" type="button">Add Step</button>
+                            <br>
+                            <button id="save-task-btn" type="button">Save Task</button>
+                            <button id="close-task-form" type="button">Close</button>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        
+        
+
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+

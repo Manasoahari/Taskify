@@ -1,0 +1,696 @@
+@font-face {
+    font-family: "font1";
+    src: url(../assets/fonts/Metropolis-Bold.otf);
+}
+@font-face {
+    font-family: "font2";
+    src: url(../assets/fonts/Metropolis-Medium.otf);
+}
+@font-face {
+    font-family: "font3";
+    src: url(../assets/fonts/Metropolis-Thin.otf);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    padding-top: 20px;
+    /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+    position: fixed;
+    border-right: 1px solid #ccc;
+    /* background-color: #f8f9fa; */
+}
+
+
+.sidebar-header {
+    color: #000000;
+    font-size: 20px;
+    padding-left: 15px;
+    font-family: font1;
+}
+
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+    border-radius: 50px;
+    color: #ffff;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+.menu-toggle {
+    font-family: font2;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+.sidebar-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+opacity: 0;
+}
+
+.sidebar-list li {
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.sidebar-list li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+            align-items: center; /* Aligne verticalement les éléments */
+            text-decoration: none; /* Retire le soulignement des liens */
+            color: inherit;
+}
+.material-icons {
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+}
+
+/* Style pour les images dans les icônes */
+.material-icons img {
+    vertical-align: middle; /* Aligne l'image avec le texte */
+    margin-right: 8px; /* Espacement entre l'image et le texte */
+}
+
+.sidebar-list li a:hover {
+    background-color: #ddd;
+}
+
+.content {
+   /* margin-left: 250px;*/
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.show {
+    display: block; /* Show the list when .show is added */
+}
+
+.profile{
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.custom-divider {
+    width: 90%; 
+    margin: 0 auto;
+}
+.profile img{
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.profile p {
+    display: flex;
+    align-items: center; 
+    font-family: font2;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 70%; 
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0 10px;
+    flex-grow: 1;
+}
+
+.icones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Ajustez la taille selon vos besoins */
+    height: 50px; /* Ajustez la taille selon vos besoins */
+    border-radius: 50%; /* Pour créer un cercle */
+    background-color: #f0f0f0; /* Couleur de fond du cercle */
+    margin-left: 20px;
+}
+
+.calendar-container {
+    /* margin-left: 100px;  */
+    margin-top: 40px;
+    text-align: center;
+    margin-left: 70px;
+    display: inline-block;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    /* background-color: #fff; */
+    padding: 20px;
+    width: 85%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.calendar div {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar .header {
+    font-weight: bold;
+   
+    border: none;
+    /* color: #fff; */
+    font-family: font3;
+    color: #000000;
+}
+
+.today {
+    border: 2px solid #007bff !important;
+    background-color: #e7f0ff !important;
+    font-weight: bold !important;
+}
+.iconeText {
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Aligner verticalement les éléments */
+    gap: 10px; /* Espacement entre l'icône et le texte */
+}
+.icones img {
+    display: block; /* Éliminer l'espace blanc sous l'image */
+}
+
+.iconeText p{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+#monthYear {
+    display: none;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: #aaa;
+}
+
+.custom-select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 16px;
+    color: #333;
+}
+.row {
+  display: flex;
+}
+.col-3, .col-8 {
+ margin: 0;
+ padding: 0;
+}
+
+  .overview{
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   margin-right: 20px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+  }
+  .overview h2{
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding:  20px;
+    font-weight: bold;
+  }
+  .row h1{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .overview li{
+    list-style: none;
+  }
+  /* li h3{
+    font-size: 20px;
+    background-color: #007bff;
+  } */
+  .list-header {
+    font-size: 1.25rem; 
+    font-weight: bold;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem; 
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.25rem; 
+    font-weight: bold;
+  }
+  .list-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%;
+  }
+  .list-header.work::before {
+    background-color: red; /* Couleur du cercle pour Work */
+  }
+
+  .list-header.personal::before {
+    background-color: green; /* Couleur du cercle pour Personal */
+  }
+  .list{
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .list:hover{
+    border: 2px solid #007bff;
+    color: #007bff;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+
+  .container {
+    width: 100%;
+}
+.row {
+    margin: 0;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+}
+.list-header {
+    font-weight: bold;
+    margin-top: 20px;
+}
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+.list-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.empty {
+    text-align: center;
+    color: #888;
+}
+.task-form {
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-height: 500px; /* Ajustez selon vos besoins */
+    overflow: auto;
+    width: 600px; /* ou une largeur fixe comme 600px */
+    max-height: 600px; /* Hauteur maximale fixe */
+    overflow: auto;
+}
+.task-form input, 
+.task-form textarea, 
+.task-form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.task-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.task-form button:hover {
+    background-color: #0056b3;
+}
+#steps-container {
+    margin-bottom: 10px;
+    flex: 1; /* Permet au conteneur de prendre l'espace restant */
+    overflow-y: auto;
+    max-height: 200px; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+    border: 1px solid #ddd; /* Optionnel, pour voir les limites du conteneur */
+    padding: 5px;
+  
+}
+.step-input {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    max-height: 30px; /* Ajustez selon vos besoins */
+}
+button {
+    margin-top: 10px;
+}
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background-color: darkred;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+}
+li{
+  list-style: none;
+}
+li h3{
+  font-size: 20px;
+  font-weight: bold;
+}
+li input{
+  color: #007bff;
+}
+
+/* Style pour les éléments de la liste de tâches */
+.list-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Conteneur pour l'en-tête de la tâche et le bouton delete */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style pour le titre de la tâche */
+.task-header h3 {
+  margin: 0;
+  font-size: 18px; /* Ajustez la taille du texte si nécessaire */
+}
+
+/* Style pour le bouton delete */
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* Style pour les cases à cocher */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Style pour les étiquettes des cases à cocher */
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  padding-left: 40px; 
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+  line-height: 1.5; 
+  width: 100%;
+}
+
+/* Créer un carré personnalisé pour les cases à cocher */
+.checkbox-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; 
+  height: 20px; 
+  background-color: #fff;
+  border: 2px solid #007bff; 
+  border-radius: 3px; 
+
+}
+
+/* Style lorsque la case à cocher est sélectionnée */
+input[type="checkbox"]:checked + .checkbox-label::before {
+  background-color: #007bff; 
+  border-color: #007bff;
+}
+
+/* Ajout d'une coche sur la case lorsque sélectionnée */
+input[type="checkbox"]:checked + .checkbox-label::after {
+  content: "✔"; 
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px; 
+}
+
+/* Amélioration visuelle lorsque la case est cochée */
+input[type="checkbox"]:checked + .checkbox-label {
+  text-decoration: line-through; /* Texte barré pour les éléments cochés */
+}
+.task-steps{
+  font-size: 16px; 
+  cursor: pointer;  
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 5px;
+}
+/* .task-descri{
+  padding: 10px;
+} */
+h1 {
+  color: #343a40;
+}
+
+h2 {
+  color: #495057;
+}
+
+h3 {
+  color: #6c757d;
+}
+
+#expense-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.container {
+  margin-top: 20px;
+}
+.form-section, .weekly-expense-section {
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-right: 20px;
+}
+.form-section {
+  border-right: 1px solid #dee2e6; /* Adds a border to separate the sections */
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  font-weight: bold;
+}
+.weekly-expense-section {
+  border-left: 1px solid #dee2e6; /* Adds a border to separate the sections */
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px 0;
+}
+.note-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* .sary{
+  background-color: #CDA3D9;
+ 
+  border-radius: 20px;
+
+  position: relative;
+  margin-left: -25px;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 5px; 
+  left: 10px;
+  color: white; 
+  font-size: 2rem; 
+  font-family: font3;
+  z-index: 10;
+} */
+
+
+body {
+  background-color: #f8f9fa;
+}
+.login-container {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+.login-container .row {
+  justify-content: center;
+}
+.login-container .sary {
+  background-color: #CDA3D9;
+ 
+  border-radius: 20px;
+  margin-top: -16px;
+  position: relative;
+  margin-left: -25px;
+}
+.login-container .img-fluid {
+  width: 100%;
+}
+.login-container .sary .overlay-text {
+  position: absolute;
+  top: 5px; 
+  left: 10px;
+  color: white; 
+  font-size: 2rem; 
+  font-family: font3;
+  z-index: 10;
+}
+.login-container .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.login-container .login h1 {
+  margin-bottom: 20px;
+  color: #495057;
+}
+.login-container .login .form-group {
+  width: 100%;
+  max-width: 400px;
+}
+.login-container .login .btn {
+  width: 100%;
+  background-color: #AC65BF;
+  color: #ffff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50px;
+}
